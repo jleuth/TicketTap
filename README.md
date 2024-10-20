@@ -1,7 +1,3 @@
-Here’s the complete **GitHub README** with instructions for running the scripts we made earlier, including commands for both **macOS/Linux** and **Windows** to set up the environment, download dependencies, and use the exploitation scripts.
-
----
-
 # TicketTap: Remote Code Execution, Lateral Movement, Authentication Bypass, and Privilege Escalation via Kerberos TGS Exploitation
 
 **TicketTap** is a multi-faceted vulnerability exploitation chain leveraging **Kerberos TGS (Ticket Granting Service) tickets** to achieve **Remote Code Execution (RCE)**, **Lateral Movement**, **Authentication Bypass**, and **Privilege Escalation** within a networked environment. This exploit allows attackers to bypass authentication, escalate privileges, and execute arbitrary commands remotely by injecting Kerberos TGS tickets into memory.
@@ -197,7 +193,3 @@ To protect against **TicketTap**, consider the following mitigations:
 ## Disclaimer
 
 This repository is for **educational purposes** only. Unauthorized use of these techniques on systems without permission is illegal.
-
----
-
-Feel free to replace the placeholder URLs with actual links, and let me know if you'd like any further adjustments!
