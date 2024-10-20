@@ -144,6 +144,10 @@ Here are setup commands to create the necessary directories, download scripts, a
     curl -O https://raw.githubusercontent.com/fortra/impacket/refs/heads/master/examples/GetUserSPNs.py > GetUserSPNs.py
     pip3 install pypykatz
     ```
+    Optionally, psexec.py to substitute for RDP
+    ```bash
+    curl -O https://raw.githubusercontent.com/fortra/impacket/refs/heads/master/examples/psexec.py > psexec.py
+    ```
 
 ### Windows Setup
 
@@ -157,6 +161,10 @@ Here are setup commands to create the necessary directories, download scripts, a
     ```powershell
     curl -O https://raw.githubusercontent.com/fortra/impacket/refs/heads/master/examples/GetUserSPNs.py > GetUserSPNs.py
     git clone https://github.com/ParrotSec/mimikatz.git 
+    ```
+    Optionally, psexec.py to substitute for RDP
+    ```bash
+    curl -O https://raw.githubusercontent.com/fortra/impacket/refs/heads/master/examples/psexec.py > psexec.py
     ```
 
 3. **Build Mimikatz**:
