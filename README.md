@@ -119,7 +119,7 @@ For **Windows**, use the PowerShell script to inject a **TGS** and attempt an RD
 
 #### Example Usage:
 ```bash
-.\tickettap.ps1 /u Username /t C:\path\to\TGS.kirbi /mimikatz C:\path\to\mimikatz.exe /ip <ip addr>
+.\tickettap.ps1 /u Username /t C:\path\to\TGS.kirbi /m C:\path\to\mimikatz.exe /ip <ip addr>
 ```
 
 - Injects the **TGS** and attempts to establish an RDP connection.
